@@ -1,7 +1,25 @@
-html{
+html {
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    
+
 
     padding: 15px;
+}
+
+img svg {
+    vertical-align: middle;
+}
+
+body {
+    font-family: "Poppins";
+    color: #616161;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+div {
+
+    align-items: center !important;
+
 }
