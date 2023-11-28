@@ -63,7 +63,9 @@
     border-radius: 14px;
     box-shadow: 0px 0px 14px goldenrod;
 }
-
+#email-id:invalid{
+    box-shadow: 0px 0px 14px goldenrod;
+}
 .thank-you-msg.show {
     display: block;
 }
@@ -109,6 +111,7 @@
     }
 
     .submit-btn {
+        width: 30%;
         float: right;
         padding: 7px 35px;
         border-radius: 60px;
@@ -118,13 +121,20 @@
         font-size: 18px;
         cursor: pointer;
         margin-bottom: 5vh;
-
     }
-
+    #submit{
+        background: transparent;
+        padding: 0;
+    }
+    #submit:hover{
+        background: transparent;
+        padding: 0;
+        box-shadow: none;
+        cursor: pointer;
+    }
     .submit-btn:hover {
-        transform: translateY(3px);
-        box-shadow: 1px 1px 12px goldenrod;
-
+        transform: translateY(3px) !important;
+        box-shadow: 1px 1px 12px goldenrod !important;
     }
     .container {
         display: block;
@@ -139,7 +149,7 @@
         <div class="row" id="row">
             <h4 style="text-align:center">We'd love to hear from you!</h4>
         </div>
-        <form id="feedbackForm">
+        <form id="feedbackForm" >
             <div class="row input-container">
                 <div>
                     <div class="styled-input wide">
@@ -153,7 +163,7 @@
                 </div>
                 <div>
                     <div class="styled-input">
-                        <input type="email" name="email" required placeholder="Email" />
+                        <input type="email" name="email" required placeholder="Email" id="email-id" />
                         <label></label>
                     </div>
                 </div>
@@ -170,7 +180,7 @@
                     </div>
                 </div>
                 <div>
-                    <div class="btn-lrg submit-btn" onclick="submitForm()">Send Message</div>
+                    <div class="submit-btn"><input id="submit" type="submit" value="Send Message" onsubmit="submitFormFunc();"></div>
                 </div>
             </div>
         </form>
@@ -180,7 +190,7 @@
     </div>
 </body>
 <script>
-    function submitForm() {
+    function submitFormFunc() {
         document.getElementById("feedbackForm").style.display = "none";
         document.getElementById("row").style.display = "none";
         document.getElementById("feedbackForm").style.display = "none";
