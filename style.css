@@ -1,25 +1,138 @@
-html {
+body{
     font-family: 'Poppins', sans-serif;
-    margin: 0;
-
-
-    padding: 15px;
-}
-
-img svg {
-    vertical-align: middle;
-}
-
-body {
-    font-family: "Poppins";
     color: #616161;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
+    overflow-x: hidden;
+    margin: 0;
 }
-
-div {
-
-    align-items: center !important;
-
+.home{
+    height: 100vh;
+    padding: 18px 0 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.navbar-menu{
+    display: flex;
+    list-style: none;
+}
+.navbar-menu li:not(:last-child) {
+    margin-right: 1.875rem;
+}
+.header-content{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 15px;
+}
+.intro{
+    display: flex;
+    justify-content: center;
+}
+.cuisines-list{
+    position: relative;
+    width: 49%;
+    margin-right: 5px;
+}
+.cuisines-list span{
+    font-size: 40px;
+    line-height: 48px;
+    font-weight: 600;
+    color: #FF4F00;
+    text-align: right;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.intro h2{
+    width: 49%;
+    text-align: left;
+    margin: 0;
+    margin-left: 5px;
+    font-size: 40px;
+    line-height: 56px;
+    font-weight: 600;
+    color: #000;
+}
+.header-content p {
+    font-size: 20px;
+    line-height: 32px;
+    margin: 18px auto 22px;
+  }
+.app-btns a{
+    display: inline-block;
+    margin: 0 10px;
+  }
+.h-banner{
+    text-align: center;
+    background-color: #f6f6f6;
+    margin-top: 60px;
+}
+img{
+    max-width: 100%;
+}
+.section{
+    padding: 120px 0 0 0;
+    width: 100%;
+}
+.container{
+    width: 90%;
+    max-width: 960px;
+    padding-right: 0.75rem;
+    padding-left: .75rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+.d-ess-cont{
+    --col-sp-x: 1.5rem;
+    --col-sp-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: calc(var(--col-sp-y) * -1);
+    margin-right: calc(var(--col-sp-x)/ -2);
+    margin-left: calc(var(--col-sp-x)/ -2);
+}
+.left-cont{
+    width: 41.5%;
+    max-width: 100%;
+    padding-right: calc(var(--col-sp-x)/ 2);
+    padding-left: calc(var(--col-sp-x)/ 2);
+    margin-top: var(--col-sp-y);
+}
+.right-cont{
+    flex: 0 0 auto;
+    width: 47%;
+    margin-left: 8.33%;
+    box-sizing: border-box;
+}
+.btn{
+    display: inline-block;
+    background: linear-gradient(90deg, #FF8046 0%, #FF4F00 49.3%, #FF0000 100%);
+    border-radius: 100px;
+    padding: 10px 30px;
+    color: #fff;
+    font-size: 16px;
+    line-height: 28px;
+}
+.btn a{
+    color: white;
+    text-decoration: none;
+}
+h3{
+    font-size: 28px;
+    line-height: 44px;
+    font-weight: 600;
+    color: #000;
 }
