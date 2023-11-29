@@ -13,9 +13,9 @@
 </head>
 <style>
     body {
-        /* background-image: linear-gradient(315deg, #3a3939 0%, #000000 74%); */
+        background-image: linear-gradient(315deg, #3a3939 0%, #000000 74%);
         padding-top: 85px;
-        background-image: url('./media/bgimageforfeedbackform.jpg');
+        /* background-image: url('./media/bgimageforfeedbackform.jpg'); */
     }
 
     h1 {
@@ -50,25 +50,28 @@
         width: 650px;
         max-width: 100%;
     }
+
     .thank-you-msg {
-    display: none;
-    text-align: center;
-    margin-top: 50px;
-    font-family: 'Poppins', sans-serif, 'arial';
-    font-weight: 600;
-    font-size: 24px;
-    color: #ff5e00;
-    padding: 20px;
-    background-color: #2d2d2d;
-    border-radius: 14px;
-    box-shadow: 0px 0px 14px goldenrod;
-}
-#email-id:invalid{
-    box-shadow: 0px 0px 14px goldenrod;
-}
-.thank-you-msg.show {
-    display: block;
-}
+        display: none;
+        text-align: center;
+        margin-top: 50px;
+        font-family: 'Poppins', sans-serif, 'arial';
+        font-weight: 600;
+        font-size: 24px;
+        color: #ff5e00;
+        padding: 20px;
+        background-color: #2d2d2d;
+        border-radius: 14px;
+        box-shadow: 0px 0px 14px goldenrod;
+    }
+
+    #email-id:invalid {
+        box-shadow: 0px 0px 14px goldenrod;
+    }
+
+    .thank-you-msg.show {
+        display: block;
+    }
 
 
     input,
@@ -87,13 +90,15 @@
     input:focus,
     textarea:focus {
         border: 2px solid #ff5e00;
-        color: black;
+        color: rgb(255, 255, 255);
+        background-color: rgb(0, 0, 0);
     }
 
     input:hover,
     textarea:hover {
         background-color: transparent;
         border: 2px solid #ff5e00;
+
 
         box-shadow: 0px 0px 14px goldenrod;
     }
@@ -111,7 +116,6 @@
     }
 
     .submit-btn {
-        width: 30%;
         float: right;
         padding: 7px 35px;
         border-radius: 60px;
@@ -122,20 +126,24 @@
         cursor: pointer;
         margin-bottom: 5vh;
     }
-    #submit{
+
+    #submit {
         background: transparent;
         padding: 0;
     }
-    #submit:hover{
+
+    #submit:hover {
         background: transparent;
         padding: 0;
         box-shadow: none;
         cursor: pointer;
     }
+
     .submit-btn:hover {
         transform: translateY(3px) !important;
         box-shadow: 1px 1px 12px goldenrod !important;
     }
+
     .container {
         display: block;
     }
@@ -149,7 +157,7 @@
         <div class="row" id="row">
             <h4 style="text-align:center">We'd love to hear from you!</h4>
         </div>
-        <form id="feedbackForm" >
+        <form id="feedbackForm">
             <div class="row input-container">
                 <div>
                     <div class="styled-input wide">
@@ -170,7 +178,7 @@
                 <div>
                     <div class="styled-input" style="float:right;">
                         <input type="number" name="phoneNumber" required placeholder="Phone Number" />
-                        <label></label>
+                        <label ></label>
                     </div>
                 </div>
                 <div>
@@ -180,7 +188,8 @@
                     </div>
                 </div>
                 <div>
-                    <div class="submit-btn"><input id="submit" type="submit" value="Send Message" onsubmit="submitFormFunc();"></div>
+                    <div class="btn-lrg submit-btn"  onclick="submitForm()">Send Message</div>
+
                 </div>
             </div>
         </form>
@@ -190,17 +199,41 @@
     </div>
 </body>
 <script>
-    function submitFormFunc() {
-        document.getElementById("feedbackForm").style.display = "none";
-        document.getElementById("row").style.display = "none";
-        document.getElementById("feedbackForm").style.display = "none";
 
+   
+function validateForm() {
+        var firstName = document.forms["feedbackForm"]["firstName"].value;
+        var lastName = document.forms["feedbackForm"]["lastName"].value;
+        var email = document.forms["feedbackForm"]["email"].value;
+        var phoneNumber = document.forms["feedbackForm"]["phoneNumber"].value;
+        var message = document.forms["feedbackForm"]["message"].value;
 
-        document.getElementById("thankYouMsg").style.display = "block";
+        if (firstName === "" || lastName === "" || email === "" || phoneNumber === "" || message === "") {
+            alert("All fields must be filled out");
+            return false;
+        }
 
-        setTimeout(function () {
-            window.location.replace("/index.html");
-        }, 3000);
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            alert("Invalid email address");
+            return false;
+        }
+
+        return true;
+    }
+
+    function submitForm() {
+        if (validateForm()) {
+            console.log("Form submitted successfully!");
+            document.getElementById("feedbackForm").style.display = "none";
+            document.getElementById("row").style.display = "none";
+            document.getElementById("thankYouMsg").style.display = "block";
+
+            setTimeout(function () {
+                window.location.replace("/index.html");
+            }, 3000);
+        }
     }
 </script>
+
 </html>

@@ -13,7 +13,7 @@ let ind = [[0,1],[1,2],[2,3],[3,4],[4,0]]
         o2+=5
         x-=5
         x2-=5
-        console.log(x);
+        // console.log(x);
         if(x==-60){
             cuisines[ind[i][0]].style.opacity = 0;
             cuisines[ind[i][0]].style.transform = `translate(0px,-60px)`;
@@ -34,5 +34,5 @@ let ind = [[0,1],[1,2],[2,3],[3,4],[4,0]]
     
 // },1000)
 // }
-console.log(cuisines[0]);
+// console.log(cuisines[0]);
 // container[0]

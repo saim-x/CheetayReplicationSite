@@ -321,3 +321,7 @@ svg {
     width: 100%;
     gap: 10px;
 }
+
+.navbar img{
+    cursor: pointer;
+}
